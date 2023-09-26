@@ -1,23 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import './style.css'
+import { Forcast } from './Forcast';
+import { NavBar } from './NavBar';
+import { Route, Routes } from 'react-router-dom';
+import { ForcastWather } from './ForcastWather';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavBar/>
+      <Routes>
+        <Route path='/' element={<Forcast/>}></Route>
+        <Route path ="/forcast" element={<ForcastWather/>}></Route>
+      </Routes>
     </div>
   );
 }
